@@ -42,7 +42,7 @@ function generatePassword() {
   var optionCart = []
 
   for (var i = 0; i < lowercaseLIst.length; i++) {
-    uppercaselist[i] = lowercaseLIst[i].toUpperCase
+    uppercaselist[i] = lowercaseLIst[i].toUpperCase()
   }
   if (userWantsNumbers === true) {
     optionCart.push(numberList)
@@ -57,6 +57,9 @@ function generatePassword() {
   if (userWantsUppercase === true) {
     optionCart.push(uppercaselist)
   }
+  if (optionCart.length === 0) {
+    optionCart.push(lowercaseLIst)
+  }
 
   var generatePassword = ""
 
@@ -65,10 +68,11 @@ function generatePassword() {
     var randomChar = getRandomItem(randomList)
     generatePassword += randomChar
 
-    console.log(generatePassword)
+   
 
 
   }
+  return generatePassword
 
     
 }
